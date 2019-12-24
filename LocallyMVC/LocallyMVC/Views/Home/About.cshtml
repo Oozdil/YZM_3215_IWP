@@ -1,0 +1,50 @@
+﻿@model IEnumerable<LocallyMVC.Models.TeammembersTable>
+
+
+
+@{
+    ViewBag.Title = "Hakkımızda";
+}
+
+<div class="row" style="margin-top:50px;">
+    <div class="col-sm-12">
+        <h3><u>Proje Hakkında</u></h3>
+        <p>
+            Bu proje <b>YZM 3215 İleri Web Programlama </b>ve <b>YZM 3219	Servis Odaklı Mimari</b> dersleri kapsamında
+            <b>CodeBlocks Takımı</b> tarafından geliştirlmiştir.
+        </p>
+        <ul class="text-left">
+            <li>Proje Önyüzü - WEB .Net-MVC ile geliştirilmiştir.</li>
+            <li>Proje Backend - servis yazılımı için Node.js ve MS-SQL teknolojileri kullanılmıştır.</li>
+        </ul>
+    </div>
+</div>
+<hr />
+
+<div class="row" >
+    <div class="col-sm-12  my-auto">
+        <h3><u>Proje Ekibi</u></h3>
+
+
+        @foreach (var item in Model)
+        {
+
+            <div class="card col-sm-2" style="float:left;">
+                <img class="card-img-top" src=@Html.DisplayFor(modelItem => item.ImgSrc) alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h4>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                </div>
+            </div>
+        }
+
+
+
+
+    </div>
+</div>
+
+
+@{
+    Html.RenderPartial("~/Views/LoginModals_PartialPage.cshtml");
+}

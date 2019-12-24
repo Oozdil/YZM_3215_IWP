@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<div class="container">
+    <div class="row" style="margin-top:50px;">
+        <h1>İletişim</h1>
+        <div class="col-sm-5 myFunctionStyle" style="min-height:500px;">
+
+
+            <div id="googleMap" style="width:100%;min-height:450px;"></div>
+
+            <script>
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(38.4914258, 27.7057708),
+                        zoom: 15,
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                    var marker = new google.maps.Marker({ position: new google.maps.LatLng(38.4914258, 27.7057708) });
+
+                    marker.setMap(map);
+                    var infowindow = new google.maps.InfoWindow({
+                        content: "MCBU HFTTF!"
+                    });
+
+                    infowindow.open(map, marker);
+                }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsUbGdkYwkxGn_IAbzKeASDNwaP_UFbFU&callback=myMap"></script>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-6 myFunctionStyle" style="min-height:500px;">
+
+            <h3 class="text-center">CODEBLOCKS TEAM</h3>
+            <h3 class="text-center"><b>Bize Ulaşın</b></h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email_contact" placeholder="Email adresiniz ..." name="email_contact" style="width:45%;float:left">
+                    <input type="text" class="form-control" id="subject" placeholder="Konu ..." name="subject" style="width:45%;float:right;">
+                    <br><br>
+                    <textarea type="text" class="form-control" id="messasge" placeholder="Mesajınız ..." name="messasge" rows=3></textarea><br>
+                    <button type="button" class="btn btn-block" onclick="Contact(email_contact.value,subject.value,messasge.value);">Mesaj Gönder</button>
+                </div>
+            </form>
+            <p><b>Adres :</b> Manisa Celal Bayar Üniversitesi Hasan Ferdi Turgutlu Teknoloji Fakültesi</p>
+            <p>Acarlar Mah. Şehit Ali Karakuzu Sk. No:10 Turgutlu / MANİSA</p>
+            <p><b>Telefon:</b> 0 (236) 314 10 10</p>
+            <p><b>Faks   :</b> 0 (236) 314 20 20</p>
+            <p><b>Eposta :</b> teknoloji@cbu.edu.tr	</p>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+@{
+    Html.RenderPartial("~/Views/LoginModals_PartialPage.cshtml");
+}

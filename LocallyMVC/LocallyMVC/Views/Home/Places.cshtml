@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Places";
+}
+
+
+
+<div class="row" style="margin-top:50px;">
+
+
+    <div class="col-sm-3 " style="margin-top:10px; ">
+        <div class="col-sm-12 myFunctionStyle " >
+            <h1 class="text-center">ARAMA</h1>
+            <form>
+                <div class="form-group">
+
+                    <label for="searchTerm">Arama Kelimesi:</label>
+                    <input type="email" class="form-control" id="searchTerm" placeholder="Kelime giriniz ..." name="searchTerm" style="width:100%;margin-top:10px;">
+                    <br>
+
+                    <label for="searchPlace">Yer Adı:</label>
+                    <input type="text" class="form-control" id="searchPlace" placeholder="Yer Adı giriniz ..." name="searchPlace" style="width:100%;margin-top:10px;">
+                    <br>
+
+                    <label for="searchLatitude" style="width:100%;">Koordinatlarım:</label>
+                    <input type="text" class="form-control  pull-left" id="searchLatitude" placeholder="Latitude..." name="searchLatitude" style="width:49%;margin-top:10px;">
+
+                    <input type="text" class="form-control  pull-right" id="searchLongitude" placeholder="Longitude..." name="searchLongitude" style="width:49%;margin-top:10px;">
+                    <br><br>
+
+
+                    <button type="button" class="btn btn-warning" style="width:100%;float:left;margin-top:10px;" onclick="getLocation();">Konumumu Belirle</button>
+                    <br><br>
+
+                    <button type="button" class="btn btn-primary" style="width:49%;margin-top:10px;" onclick="GetPlacesByCoords(searchLatitude.value,searchLongitude.value,searchTerm.value); SetSearchCookie();	">Koordinatlarda Ara</button>
+
+
+                    <button type="button" class="btn btn-primary" style="width:49%;margin-top:10px;" onclick="GetPlacesByLocationAndTerm(searchPlace.value,searchTerm.value); SetSearchCookie();	">Konumda Ara</button>
+                    <hr />
+                    <h5 style="text-align:center" id="searchResultSummary">Sonuçlar :</h5>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="col-sm-9">
+        <h2 style="text-align:center">MEKANLAR</h2>
+        
+        <div class="col-sm-12" id="placeContainer">
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+@{
+    Html.RenderPartial("~/Views/LoadingModal_PartialPage.cshtml");
+}
+@{
+    Html.RenderPartial("~/Views/LoginModals_PartialPage.cshtml");
+}

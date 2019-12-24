@@ -1,0 +1,93 @@
+ body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+	background-color:gray;
+	
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 15px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: gray;
+	padding:0;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+	padding:0;
+  }
+
+  .navbar {
+    
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  .myFunctionStyle
+  {
+  text-align:left;
+  border:1px lightgray solid;
+  padding-bottom:15px;
+  border-radius:15px;
+
+  }
+  .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   padding:5px;
+   margin-top:5px;
+}
+.userImages
+{
+	margin:2px;
+	 border-radius:15px;
+}
+/*Places içinde mekan kartlarý*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 32%;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    /*float: left;*/
+    /*margin: 5px;*/
+}
+
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+
+    .card img:hover {
+        opacity: 0.7;
+    }
+/*Places içinde mekan kartlarý*/

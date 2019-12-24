@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+}
+
+<!-- Yelp content -->
+<div class="row" style="margin-top:50px;margin-left:10px;margin-right:10px;">
+    <div class="col-sm-12">
+        <input style="display:none" id="hiddenPlaceID" type="text" value="">
+        <input style="display:none" id="hiddenUserID" type="text" value="">
+
+        <h1 class="text-center" id="placeName"></h1>
+        <div class="col-sm-4">
+            <img id="placeImg1" src="Images/AvatarPlace.jpg" class="img-thumbnail" alt="loading images..." width="100%;" style="height:250px !important ;" onclick='OpenBigImage(this.src);'>
+        </div>
+        <div class="col-sm-4">
+            <img id="placeImg2" src="Images/AvatarPlace.jpg" class="img-thumbnail" alt="loading images..." width="100%;"style="height: 250px !important ;" onclick='OpenBigImage(this.src);'>
+        </div>
+        <div class="col-sm-4">
+            <img id="placeImg3" src="Images/AvatarPlace.jpg" class="img-thumbnail" alt="loading images..." width="100%;" style="height: 250px !important ;" onclick='OpenBigImage(this.src);'>
+        </div>
+
+    </div>
+  
+    <div class="col-sm-12" style="margin-top:10px;">
+        <div class="col-sm-6">
+            <h3>Adres        : </h3><p id="placeAddress"></p>
+            <h3>Telefon      :</h3><p id="placePhone"></p>
+            <h3>Kategoriler :</h3><p id="placeCategories"></p>
+        </div>
+        <div class="col-sm-6">
+            <div id="googleMap" style="width:100%;height:300px;"></div>
+
+            <script>
+
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsUbGdkYwkxGn_IAbzKeASDNwaP_UFbFU&callback=myMap"></script>
+        </div>
+    </div>
+</div>
+<!-- Yelp content -->
+<!-- Locally content -->
+<div class="row" style="margin:10px;">
+    <hr>
+    <h1 class="text-center">Locallyden</h1>
+    <hr>
+
+
+
+
+
+    <div class="col-sm-5">
+        <h3 class="text-center">
+            Ziyaretçi Fotoğrafları <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#uploadImageModal">
+                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+                Fotoğraf Ekle
+            </button>
+        </h3><br><hr>
+        <div id="userImageContainer" style="max-height:400px;overflow-y:scroll;">
+            <!--
+            <img src="https://www.w3schools.com/w3images/tablesetting2.jpg" class="" alt="Table Setting" width="49%" height="200px">
+            -->
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="col-sm-5">
+        <h3 class="text-center">
+            Ziyaretçi Yorumları <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#commentModal">
+                <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+                Yorum Ekle
+            </button>
+        </h3><br><hr>
+
+        <div id="placeComments"></div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="col-sm-2">
+
+        <h3 class="text-center">Sayfa İstatistikleri</h3><hr>
+        <p>Likes    : <span id="pageLikes"></span></p>
+        <p>Dislikes : <span id="pageDislikes"></span></p>
+        <p>Page Hit : <span id="pageHit"></span></p>
+        <div style="width:100%;">
+            <div class="switch-toggle switch-3 switch-candy">
+                <input id="on" name="state-d" type="radio" checked="" />
+                <label for="on" onclick="Rate(-1);" style="background-color:'red;'">
+                    <i class="fa fa-thumbs-o-down"></i>
+                </label>
+
+                <input id="na" name="state-d" type="radio" checked="checked" />
+                <label for="na" class="disabled" onclick="Rate(0);">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                </label>
+
+                <input id="off" name="state-d" type="radio" />
+                <label for="off" onclick="Rate(1);">
+                    <i class="fa fa-thumbs-o-up"></i>
+                </label>
+
+                <a id="RateSelection" style="background-color:#a5dba2"></a>
+            </div>
+            <div id="RateResult" style="width:100%;  text-align: center;">Not Rated</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Locally content -->
+
+
+
+
+
+@{
+    Html.RenderPartial("~/Views/LoginModals_PartialPage.cshtml");
+    Html.RenderPartial("~/Views/CommentModal_PartialPage.cshtml");
+    Html.RenderPartial("~/Views/BigImageModal_PartialPage.cshtml");
+     Html.RenderPartial("~/Views/LoadingModal_PartialPage.cshtml");
+     Html.RenderPartial("~/Views/UploadImageModal_PartialPage.cshtml");
+}
+

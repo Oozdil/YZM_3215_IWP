@@ -1,0 +1,29 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="uploadImageModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Fotoğraf Yükleyin</h3>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm"
+                      enctype="multipart/form-data"
+                      action="http://localhost:8081/process_upload"
+                      method="post">
+
+                    <input type="file" name="userPhoto" id="userPhoto" class="form-control-file border" style="width:100%;" onchange="previewUploadImage(this);" />
+                    <br>
+                    <img id="previewImg" src="../../Images/AvatarPlace.jpg" class="" alt="loading images..." width="100%" height="250px">
+                    <input type="button" value="Fotoğraf Yükle" name="submit" onclick="UploadFile();" style="width:100%;">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->

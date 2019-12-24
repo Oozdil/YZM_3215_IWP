@@ -1,0 +1,32 @@
+﻿<!--Header -->
+<nav class="navbar navbar-inverse navbar-fixed-top" style="border-radius:0;margin-bottom:0;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">Locally</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+
+                <li id="menuLink1"><a href="@Url.Action("Index","Home")">Anasayfa</a></li>
+                <<li id="placesMenuIcon" style="display:none;"><a href="@Url.Action("Places","Home")">Mekanlar</a></li>
+                <li id="menuLink3"><a href="@Url.Action("About","Home")">Hakkımızda</a></li>
+                <li id="menuLink4"><a href="@Url.Action("Contact","Home")">İletişim</a></li>
+                <li id="adminMessages" style="display:none;"><a href="@Url.Action("AdminContact","Home")">Mesajları Oku</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li id="registerIcon" style="display:none;"><a href="#" onclick="ShowModal(2);"><span class="glyphicon glyphicon-user"></span>Kayıt</a></li>
+                <li id="loginIcon" style="display:none;"><a href="#" onclick="ShowModal(1);"><span class="glyphicon glyphicon-log-in"></span>Giriş</a></li>
+                <li id="logoutIcon" style="display:none;"><a href="#" onclick="ShowModal(3);"><span class="glyphicon glyphicon-log-out"></span>Çıkış</a></li>
+                <li id="nameBadge" style="display:none;"><a><span class="badge badge-light" id="nameBadgeText">OÖ</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>

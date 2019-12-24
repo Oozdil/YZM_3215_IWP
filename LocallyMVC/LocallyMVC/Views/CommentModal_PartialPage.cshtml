@@ -1,0 +1,27 @@
+﻿<!-- Comment Modal -->
+<div class="modal fade" id="commentModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="placeNameCommentModal" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="comment">Yorumunuz :</label>
+                    <textarea class="form-control" rows="5" id="placeComment" maxlength="250" oninput="commentLengthValidation(this.value);"></textarea>
+                    <label for="comment">Kalan karakter : <span id="remainingChars">250</span></label>
+                </div>
+                <button type="button" class="btn btn-default" onclick="MakeComment();" data-dismiss="modal">Gönder</button>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Comment Modal -->

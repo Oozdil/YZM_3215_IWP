@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocallyDBModelStoreContainer" CdmEntityContainer="LocallyDBEntities">
+    <EntitySetMapping Name="AboutContentTables">
+      <EntityTypeMapping TypeName="LocallyDBModel.AboutContentTable">
+        <MappingFragment StoreEntitySet="AboutContentTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AboutContent" ColumnName="AboutContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlidersTables">
+      <EntityTypeMapping TypeName="LocallyDBModel.SlidersTable">
+        <MappingFragment StoreEntitySet="SlidersTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ImgSrc" ColumnName="ImgSrc" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SliderContent" ColumnName="SliderContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeammembersTables">
+      <EntityTypeMapping TypeName="LocallyDBModel.TeammembersTable">
+        <MappingFragment StoreEntitySet="TeammembersTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImgSrc" ColumnName="ImgSrc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
